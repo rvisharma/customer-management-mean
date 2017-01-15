@@ -3,8 +3,8 @@ export class Customer {
   id: number;
   email: string;
 
-  constructor(name: string, email: string) {
-    this.id = Date.now();
+  constructor(name: string, email: string, id: number = Date.now() ) {
+    this.id = id;
     this.name = name;
     this.email = email;
   }

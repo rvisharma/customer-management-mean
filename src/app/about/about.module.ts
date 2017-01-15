@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SharedModule } from '../shared/shared.module';
 import { aboutRouting } from './about.routing';
 
 import { AboutComponent } from './about.component';
@@ -11,12 +12,13 @@ import { UserService } from '../shared/services/user.service';
 @NgModule({
   imports: [
     CommonModule,
+    SharedModule,
     aboutRouting
   ],
   declarations: [
     AboutComponent,
     AboutListComponent,
-    AboutUserComponent,
+    AboutUserComponent
   ],
   providers: [
     UserService

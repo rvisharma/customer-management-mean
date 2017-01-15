@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+//import { ReactiveFormsModule } from '@angular/forms';
 
-import { CustomerModule } from './customer/customer.module';
-import { AboutModule } from './about/about.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 
@@ -13,23 +12,27 @@ import { appRouting } from './app.routing';
 
 // Component
 import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    NotFoundComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
-    CustomerModule,
-    AboutModule,
+  //  ReactiveFormsModule,
+    SharedModule,
     appRouting
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  /**
+   *
+   */
+  constructor() {
+    console.log('app module started');
+  }
+ }

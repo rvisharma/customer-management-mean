@@ -1,16 +1,15 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
-import { NotFoundComponent } from '../not-found/not-found.component';
-
 import { AboutComponent } from './about.component';
 import { AboutUserComponent } from './about-user/about-user.component';
 import { AboutListComponent } from './about-list/about-list.component';
 
+import { NotFoundComponent } from '../shared/not-found/not-found.component';
+
 const aboutRoutes: Routes = [
   {
-    path: 'about', component: AboutComponent,
+    path: '', component: AboutComponent,
     children: [
       { path: '', component: AboutListComponent },
       { path: '404', component: NotFoundComponent },
