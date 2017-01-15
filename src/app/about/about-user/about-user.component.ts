@@ -21,7 +21,12 @@ export class AboutUserComponent implements OnInit {
     const username = this.route.snapshot.params['username'];
     this.userService
       .getUser(username)
-      .then(user => this.user = user);
+      .then(user => {
+        if (!user) {
+          this.router.navigate(['about/404']);
+        }
+        this.user = user;
+      });
   }
 
   goBack = () => {

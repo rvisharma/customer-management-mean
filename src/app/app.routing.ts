@@ -1,17 +1,25 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CustomerComponent } from './customer/customer.component';
-import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AboutUserComponent } from './about/about-user/about-user.component';
+
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerListComponent } from './customer/customer-list/customer-list.component';
+import { CustomerAddComponent } from './customer/customer-add/customer-add.component';
+import { CustomerDeleteComponent } from './customer/customer-delete/customer-delete.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'customer', component: CustomerComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'about/:username', component: AboutUserComponent },
+  {
+    path: 'customer',
+    component: CustomerComponent,
+    children: [
+      { path: '', component: CustomerListComponent },
+      { path: 'add', component: CustomerAddComponent },
+      { path: 'delete', component: CustomerDeleteComponent }
+    ]
+  },
   { path: '**', component: NotFoundComponent }
 ];
 
