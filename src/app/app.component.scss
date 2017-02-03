@@ -1,3 +1,11 @@
 .active{
   color: #FFF !important;
 }
+
+
+#nav-cbox {
+  display:none
+}
+#nav-cbox:checked ~ .collapse {
+    display: block;
+}

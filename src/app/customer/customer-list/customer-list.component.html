@@ -7,8 +7,10 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-12" *ngFor="let customer of customers">
-      <app-customer-list-item [customer]="customer"></app-customer-list-item>
+    <div class="col-sm-12">
+      <div class="list-group" *ngFor="let customer of customers">
+        <app-customer-list-item [customer]="customer"></app-customer-list-item>
+      </div>
     </div>
   </div>
 </div>

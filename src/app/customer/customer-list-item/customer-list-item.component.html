@@ -1,7 +1,5 @@
-<div class="row" *ngIf="customer">
-  <div class="col-sm-12">
-    <div class="well">
-      Name: {{customer.name}} <br> Email: {{customer.email}} <br> ID: {{customer.id}} <br>
-    </div>
-  </div>
+<div class="list-group-item" *ngIf="customer">
+  <h4 class="list-group-item-heading">{{customer.name}}</h4>
+  <p class="list-group-item-text">{{customer.email}}</p>
+  <p class="list-group-item-text">{{customer.id}}</p>
 </div>
